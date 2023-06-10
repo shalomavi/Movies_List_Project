@@ -64,6 +64,3 @@ class StorageJson(IStorage):
             movies[title]['note'] = notes
         with open(self.file_path, "w") as fileobj:
             fileobj.write(json.dumps(movies))
-
-
-

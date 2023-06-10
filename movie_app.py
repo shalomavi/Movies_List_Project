@@ -93,7 +93,8 @@ class MovieApp:
 
         print("Bye!")
 
-    def _print_menu(self):
+    @staticmethod
+    def _print_menu():
         """prints a menu for the user"""
         print(f'''
         {Fore.LIGHTRED_EX}M{Fore.LIGHTYELLOW_EX}e{Fore.CYAN}n{Fore.LIGHTGREEN_EX}u{Fore.MAGENTA}:{Style.RESET_ALL}
@@ -111,14 +112,16 @@ class MovieApp:
     
         ''')
 
-    def _get_input(self):
+    @staticmethod
+    def _get_input():
         """get an input and returns it"""
         user_input = input(
             f'{Fore.LIGHTYELLOW_EX}Enter choice (1-10), {Fore.RED}'
             f'(0){Fore.LIGHTYELLOW_EX} to Exit:{Style.RESET_ALL} ')
         return user_input
 
-    def _get_enter_key(self):
+    @staticmethod
+    def _get_enter_key():
         """checks if pressed key is enter """
         enter_key_input = input(f"Press {Fore.LIGHTGREEN_EX}enter{Style.RESET_ALL} to continue")
         if enter_key_input == "":
@@ -316,7 +319,8 @@ class MovieApp:
                     print(f"{key}")
 
     # JUST WANTED TO SAY THAT I DID NOT WRITE THE CODE OF THE EDIT DISTANCE FUNCTION.###
-    def _edit_distance(self, first_string, second_string):
+    @staticmethod
+    def _edit_distance(first_string, second_string):
         """
         calculates the difference(amount of actions needed)
          between two strings
@@ -378,7 +382,8 @@ class MovieApp:
         # show the plot
         plt.show()
 
-    def _get_movies_api(self, title):
+    @staticmethod
+    def _get_movies_api(title):
         """
         connect to omdbapi and gets the api for the selected
         title and return a dictionary of the movie data
@@ -459,7 +464,8 @@ class MovieApp:
 
         return html_grid
 
-    def get_movie_website_address(self, movie_data):
+    @staticmethod
+    def get_movie_website_address(movie_data):
         """
         gets data of a movie and returns its imdb address
         :param movie_data:
@@ -471,7 +477,8 @@ class MovieApp:
         address = f'https://www.imdb.com/title/{imdb_id}/'
         return address
 
-    def _check_abbreviation(self, abbreviation):
+    @staticmethod
+    def _check_abbreviation(abbreviation):
         match abbreviation:
             case 'U.S.':
                 return 'United States'
@@ -500,7 +507,8 @@ class MovieApp:
                 continue
         return ''
 
-    def _get_country_flag(self, country):
+    @staticmethod
+    def _get_country_flag(country):
         """
         searches in the api database and returns the country flag's url
         :param country:

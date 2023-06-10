@@ -82,8 +82,8 @@ class StorageCsv(IStorage):
                     new_data += line.strip() + "," + notes
                 else:
                     new_line_without_notes = line.split(",")[:-1]
-                    new_line = new_line_without_notes[0] +","+ new_line_without_notes[1] +","\
-                               + new_line_without_notes[2]
+                    new_line = new_line_without_notes[0] + "," + new_line_without_notes[1] + "," \
+                        + new_line_without_notes[2]
                     new_data += new_line.strip() + "," + notes
             else:
                 new_data += line

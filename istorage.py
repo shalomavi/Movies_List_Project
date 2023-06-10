@@ -20,9 +20,6 @@ class IStorage(ABC):
         raise NotImplementedError
 
 
-class StorageCsv(IStorage):
-    def __init__(self, file_path):
-        pass
 
 
 

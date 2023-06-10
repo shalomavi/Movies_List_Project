@@ -16,12 +16,11 @@ class MovieApp:
         self._storage = storage
 
     def _command_list_movies(self, movies=None):
-
         """
-            prints all movies in data
-            :param :
-            :return: None
-            """
+        prints all movies in data
+        :param movies:
+        :return: None
+        """
         if movies is None:
             movies = self._storage.list_movies()
         number_of_movies = len(movies)
@@ -35,11 +34,11 @@ class MovieApp:
 
     def _command_movie_stats(self):
         """
-            prints stats about the movies rating:
-            average, median, min and max
-            :param :
-            :return: None
-            """
+        prints stats about the movies rating:
+        average, median, min and max
+        :param :
+        :return: None
+        """
         movies_dict = self._storage.list_movies()
         movie_ratings_list = []
         for movie in movies_dict:

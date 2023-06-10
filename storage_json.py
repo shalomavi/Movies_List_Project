@@ -37,7 +37,7 @@ class StorageJson(IStorage):
             and saves it. The function doesn't need to validate the input.
             """
         movies = self.list_movies()
-        movies.update({title: {'rating': rating, 'year': year}})
+        movies.update({title: {'rating': float(rating), 'year': int(year)}})
         with open(self.file_path, "w") as fileobj:
             fileobj.write(json.dumps(movies))
 
@@ -59,7 +59,7 @@ class StorageJson(IStorage):
             and saves it. The function doesn't need to validate the input.
             """
         movies = self.list_movies()
-        movies[title]['rating'] = rating
+        movies[title]['rating'] = float(rating)
         if notes is not None:
             movies[title]['note'] = notes
         with open(self.file_path, "w") as fileobj:

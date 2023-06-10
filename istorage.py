@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 
-import json
 
 class IStorage(ABC):
     @abstractmethod
@@ -18,9 +17,3 @@ class IStorage(ABC):
     @abstractmethod
     def update_movie(self, title, rating, notes):
         raise NotImplementedError
-
-
-
-
-
-

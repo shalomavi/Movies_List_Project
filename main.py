@@ -15,8 +15,11 @@ def main():
         movie_app = MovieApp(storage)
         movie_app.run()
     except IndexError:
-        storage = StorageCsv('data.csv')
-        storage = StorageJson('data.json')
+        file_name = input("Enter file name: ")
+        if file_name.split(".")[1] == "csv":
+            storage = StorageCsv(file_name)
+        else:
+            storage = StorageJson(file_name)
         movie_app = MovieApp(storage)
         movie_app.run()
 
